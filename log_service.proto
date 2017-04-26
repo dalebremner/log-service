@@ -1,0 +1,24 @@
+// Copyright © 2017 Dell Inc. or its subsidiaries.  All Rights Reserved.
+
+syntax = "proto3";
+
+//option java_multiple_files = true;
+//option java_package = "io.grpc.examples.helloworld";
+//option java_outer_classname = "HelloWorldProto";
+//option objc_class_prefix = "HLW";
+
+package logservice;
+
+service LogService {
+  rpc GetSelEntries (SelRequest) returns (SelReply) {}
+}
+
+message SelRequest {
+  string ipAddress = 1;
+  string userName = 2;
+  string password = 3;
+}
+
+message SelReply {
+  string message = 1;
+}
